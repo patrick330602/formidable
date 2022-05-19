@@ -524,6 +524,9 @@ class IncomingForm extends EventEmitter {
     return originalFilename;
   }
 
+  // able to get composed extension with multiple dots
+  // "a.b.c" -> ".b.c"
+  // as opposed to path.extname -> ".c"
   _getExtension(str) {
     if (!str) {
       return '';
